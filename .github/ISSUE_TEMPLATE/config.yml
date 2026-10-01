@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Play the games
+    url: https://itsutsu.com
+    about: Every package is played at itsutsu.com.
+  - name: Report a security problem privately
+    url: mailto:john@johnmorris.ca
+    about: Please do not open a public issue for a security problem.

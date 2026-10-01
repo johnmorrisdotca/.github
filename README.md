@@ -1,10 +1,15 @@
 # Community files for the johnmorrisdotca packages
 
-The default contributing guide, code of conduct, security policy, support
-page, issue templates and pull request template for every public repository
-under johnmorrisdotca. GitHub shows these wherever a repository has none of
-its own. A repository that needs something particular to itself, such as
-Korokoro's "suggest a game" or Kyuubu's "add a solve", keeps its own file,
-and that file wins.
+The master copy of the community files every johnmorrisdotca package shares:
+the code of conduct, the security policy, the contributing guide and the
+support page, and the generic issue and pull request templates.
 
-Change a file here and every package's community pages change with it.
+**Every package keeps its own copy** of its contributing guide, code of
+conduct, security policy and licence, so a clone or a fork is complete
+without this repository. Those copies are made from the files here, and each
+package has a test that fails when its copy drifts. Change a file here, and
+the change goes out to every package from here.
+
+What only GitHub's website uses stays here alone: the issue templates and the
+pull request template, which GitHub shows in any repository that has none of
+its own, and the support page.

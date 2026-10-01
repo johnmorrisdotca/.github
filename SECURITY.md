@@ -1,7 +1,8 @@
 # Security
 
-These packages run in your page or on your server. They make no network
-requests of their own, keep nothing outside the page they are on, and have no
+These packages run in your page or on your server. Beyond loading their own
+optional files, such as a sound clip when sound is turned on, they make no
+network requests, keep nothing outside the page they are on, and have no
 runtime dependencies. Their seeded random numbers are for fair, repeatable
 games and are not secret: never use a seed as a credential.
 

@@ -38,3 +38,9 @@ are in [`readme-standard/`](readme-standard/). They are not yet in every
 package: [Tsunagi](https://github.com/johnmorrisdotca/tsunagi) and
 [Gunjin](https://github.com/johnmorrisdotca/gunjin) are the first two, and the
 other twenty-two follow.
+
+## The levels standard
+
+Every package that ships levels counts how much of the map a level's answer
+covers in its difficulty, and states it the same way: see
+[LEVELS-STANDARD.md](LEVELS-STANDARD.md). Meikyuu (3.0.0) is the model.

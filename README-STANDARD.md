@@ -37,7 +37,9 @@ It adds what was missing from most of them:
 
 Nothing is shortened to meet the standard. A section that is longer than the
 standard asks for stays as long as it is; the standard sets what must be there,
-never how much may be.
+never how much may be. The one limit is not the standard's: see
+[How long a README may be](#how-long-a-readme-may-be), which moves material to
+`docs/` and never removes it.
 
 ## The section order
 
@@ -82,6 +84,33 @@ Above the first `##`: the **title**, the **summary**, the **badges**, the
 
 Within a section, `###` is the only level used, and a level is never skipped
 (`##` to `####` is a fault).
+
+## How long a README may be
+
+**64,000 characters.** npm keeps only the first 65,536 characters of a README
+(measured 2026-10-06: the registry's copy of every README over that length ends
+mid-sentence at exactly 65,536), and shows that. A README past the limit loses
+its end on npm: its Development, Contributing, Changes and Licence sections, and
+the family list. The budget is 64,000, which leaves room for an edit, and the
+lint fails a README over it.
+
+A README that would be longer keeps the sections the standard requires and
+moves **reference material** to files under `docs/`, linking each by a relative
+link from the section it came out of, with a summary left behind:
+
+- what moves: a source tree with a line on each file, the steps for making the
+  package's data, the long tail of a table of calls (the README keeps the ones to
+  learn first), the list of an SVG's classes and attributes, and prose that is
+  about how something works inside rather than how it is used;
+- what stays: every required section, every picture, every example (the examples
+  are run by the test, and the test reads the README), the install line, the
+  tables a test holds to the code, and the family list (it is generated);
+- a moved section keeps its heading and a paragraph that says what is in the
+  file, so that nobody looking for it in the README finds nothing.
+
+`docs/` is on GitHub and is not in the tarball, so a moved page is read on
+GitHub, through the link. The files are plain Markdown, each starting with a
+`#` title and a line that links back to the README.
 
 ## Rules for the text
 
@@ -309,6 +338,11 @@ decided.
   in `family.test.js` first (see the README here), or the Copies workflow goes
   red; so the line that points contributors at this file goes in with the
   rollout, in the same pass.
+- **Five packages' READMEs are already past npm's limit** and are cut off on npm
+  today, before this standard touches them: Toranpu (66,936 bytes), Korokoro
+  (66,056), Kyuubu (65,979), Kazu (67,109); Tsunagi's was 53,230 before the
+  pilot added pictures and examples. They need the move to `docs/` described
+  above, and which of their sections go is for the owner to approve.
 - **`Features` keeps its name** (twenty READMEs have it); the picture gallery is
   its `### What's in it` subsection. The alternative is renaming the section.
 - **Pictures are WebP**, made with the browser's own encoder, so no tool is

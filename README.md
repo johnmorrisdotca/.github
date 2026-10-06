@@ -27,3 +27,14 @@ reached every package the Copies workflow here is red, and says which.
 What only GitHub's website uses stays here alone: the issue templates and the
 pull request template, which GitHub shows in any repository that has none of
 its own, and the support page.
+
+## The README standard
+
+Every package's README has one layout, one set of rules for its examples and
+pictures, and a test that holds it to them: see
+[README-STANDARD.md](README-STANDARD.md). The files each package copies to hold
+itself to it (the lint, its test, the examples runner and the pictures library)
+are in [`readme-standard/`](readme-standard/). They are not yet in every
+package: [Tsunagi](https://github.com/johnmorrisdotca/tsunagi) and
+[Gunjin](https://github.com/johnmorrisdotca/gunjin) are the first two, and the
+other twenty-two follow.

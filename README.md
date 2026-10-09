@@ -44,3 +44,15 @@ other twenty-two follow.
 Every package that ships levels counts how much of the map a level's answer
 covers in its difficulty, and states it the same way: see
 [LEVELS-STANDARD.md](LEVELS-STANDARD.md). Meikyuu (3.0.0) is the model.
+
+## The documentation site
+
+Every package also publishes a documentation site beside its demo: a page per
+export made from its doc comments, guides from Markdown in English and
+Japanese, search that runs in the browser, and `llms.txt`. The standard is in
+[README-STANDARD.md](README-STANDARD.md#the-documentation-site), the master
+copies of its shared files are in [`docs-site/`](docs-site/), and the steps for
+a package are Hikidashi's
+[docs/ROLLOUT.md](https://github.com/johnmorrisdotca/hikidashi/blob/main/docs/ROLLOUT.md).
+[`drafts/profile-README.md`](drafts/profile-README.md) is a draft of the
+profile page listing every package by its English job.

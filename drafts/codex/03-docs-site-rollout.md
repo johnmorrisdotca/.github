@@ -1,0 +1,3 @@
+# Task: roll the docs site out to each package (ready: John approved the titles and keywords table, "-like" keywords included)
+
+The pilot is hikidashi, branch `docs-site` (`~/Projects/hikidashi`). Follow `docs/ROLLOUT.md` there exactly, one repo per task: shared files copied unchanged (`scripts/docs-site.mjs`, `src/docs-site.test.js`, `e2e/docs-site.demo.mjs`), `docs/site.json` with the approved English job, TSDoc + @example on every export, guides in `docs/guides/` and `docs/guides/ja/`, npm keywords from the approved table. The mechanical part is ~20 min per repo; the writing (TSDoc, ~10 guides EN/JA) is the real work. Mark Japanese as needing review.

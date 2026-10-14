@@ -8,7 +8,7 @@ Owners: **Codex** does most of the work (John, 2026-10-09: "go slower and let th
 | 01b | Family template text fixes from the Japanese review of 01 (apply in the 02 branches) | HIGH | Codex | done inside 02 — reviewed text applied — report reports/02-embed-standard.md |
 | 02 | Family embed standard (shared builder, then each package) | HIGH | Codex | done — branch codex/02-embed-standard — report reports/02-embed-standard.md |
 | 02b | Embed builder Japanese fixes and shared builder words (from the review of 02's first 8 packages) | HIGH | Codex | done inside 02 — reviewed terms/shared words applied — report reports/02-embed-standard.md |
-| 03 | Docs site rollout per package | MED | Codex | in progress — codex — 2026-10-11 15:50 — branch codex/03-docs-site-rollout — korokoro, kyuubu, hitotsu, toranpu, tane, narabe, tenka, kumimoji, tsunagi, jarajara, suido, domino, kotoba, sugoroku, kazu, meikyuu and hikidashi done and green; active package chizu; shared version 2026-10-12 synchronized and verified |
+| 03 | Docs site rollout per package | MED | Codex | done — branch codex/03-docs-site-rollout — report reports/03-docs-site-rollout.md |
 | 04 | hata curated square crops (whole + cropped) | MED | Claude (Sonnet) | done, released as hata 1.2.0 — branch claude/04-hata-square-crops — report reports/04-hata-square-crops.md |
 | 05 | hata flag decisions + disputed-flag variants | MED | Claude (Sonnet) | done, released as hata 1.3.0 — branch claude/05-hata-flag-decisions — report reports/05-hata-flag-decisions.md |
 | 06 | French for the packages | MED | Codex | ready (Canadian French) |

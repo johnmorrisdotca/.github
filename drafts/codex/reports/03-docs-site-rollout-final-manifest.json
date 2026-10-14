@@ -1,0 +1,960 @@
+{
+  "shared": {
+    "version": "2026-10-13-workspaces",
+    "generator_hash": "5953399a4b239c6f721b733ba007daba8335689dbdbf746135c8d166aa91dead",
+    "browser_hash": "6119efc290d197bb2d90cdd8eaf9dc2364bc485973c4b6f0e6da64c543594564",
+    "static_hash": "6f3269517351bf1c48bab036bc831184b7889a3c58aa67b57012e43fef2b9178",
+    "pilot": "/Users/john/Projects/hikidashi-worktrees/codex-03",
+    "master": "/Users/john/Projects/johnmorrisdotca-github-worktrees/codex-03/docs-site",
+    "packages": [
+      "korokoro",
+      "kyuubu",
+      "hitotsu",
+      "toranpu",
+      "tane",
+      "narabe",
+      "tenka",
+      "kumimoji",
+      "tsunagi",
+      "jarajara",
+      "suido",
+      "domino",
+      "kotoba",
+      "sugoroku",
+      "kazu",
+      "meikyuu",
+      "hikidashi",
+      "chizu",
+      "bushu",
+      "tobiishi",
+      "jirai",
+      "gunjin",
+      "karakuri",
+      "houseki",
+      "address-plus",
+      "kuni",
+      "hata",
+      "rest-in-pieces"
+    ],
+    "master_commit": "b10111d26650e7e01dcbb9cc533e6fd340a86a6f",
+    "verification": "All 28 packages have adopted the five current shared files, passed their required gates, and been committed with clean worktrees.",
+    "verification_runtime": {
+      "node": "24.15.0",
+      "zlib": "1.2.12",
+      "executable": "/opt/homebrew/Cellar/node@24/24.15.0/bin/node"
+    },
+    "readme_lint_hash": "ff28f44c7dc2630ee878ef8c75222bf92a57d917282e0038746e8c23cf821696",
+    "readme_test_hash": "c9ff84a2605f2d0969715fd18e7672b9ae259026f4b0643467b38c32b254a011"
+  },
+  "packages": [
+    {
+      "package": "korokoro",
+      "branch": "codex/03-docs-site-rollout",
+      "commit": "c6fadaf2e405387e2f1da1863b7ed662355ca9a5",
+      "state": "done and green",
+      "checks": [
+        {
+          "command": "pnpm check",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-korokoro-check.log"
+        },
+        {
+          "command": "pnpm docs:check",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-korokoro-docs-check.log"
+        },
+        {
+          "command": "pnpm test:demo",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-korokoro-test-demo.log"
+        },
+        {
+          "command": "pnpm test:readme",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-korokoro-test-readme.log"
+        },
+        {
+          "command": "pnpm test:package",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-korokoro-test-package.log"
+        }
+      ]
+    },
+    {
+      "package": "kyuubu",
+      "branch": "codex/03-docs-site-rollout",
+      "commit": "ca5bc55754cb75cfa1c5c40d7700613b8dc26059",
+      "state": "done and green",
+      "checks": [
+        {
+          "command": "pnpm check",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-kyuubu-check.log"
+        },
+        {
+          "command": "pnpm docs:check",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-kyuubu-docs-check.log"
+        },
+        {
+          "command": "pnpm test:demo",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-kyuubu-test-demo.log"
+        },
+        {
+          "command": "pnpm test:readme",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-kyuubu-test-readme.log"
+        },
+        {
+          "command": "pnpm test:package",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-kyuubu-test-package.log"
+        }
+      ]
+    },
+    {
+      "package": "hitotsu",
+      "branch": "codex/03-docs-site-rollout",
+      "commit": "230856a5aaf75901e85b391a18c6a3b7970885d7",
+      "state": "done and green",
+      "checks": [
+        {
+          "command": "pnpm check",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-hitotsu-check.log"
+        },
+        {
+          "command": "pnpm docs:check",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-hitotsu-docs-check.log"
+        },
+        {
+          "command": "pnpm test:demo",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-hitotsu-test-demo.log"
+        },
+        {
+          "command": "pnpm test:readme",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-hitotsu-test-readme.log"
+        },
+        {
+          "command": "pnpm test:package",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-hitotsu-test-package.log"
+        }
+      ]
+    },
+    {
+      "package": "toranpu",
+      "branch": "codex/03-docs-site-rollout",
+      "commit": "83d69a341a43e63ce685d486b9fd662cf8bd9726",
+      "state": "done and green",
+      "checks": [
+        {
+          "command": "pnpm check",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-toranpu-check.log"
+        },
+        {
+          "command": "pnpm docs:check",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-toranpu-docs-check.log"
+        },
+        {
+          "command": "pnpm test:demo",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-toranpu-test-demo.log"
+        },
+        {
+          "command": "pnpm test:readme",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-toranpu-test-readme.log"
+        },
+        {
+          "command": "pnpm test:package",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-toranpu-test-package.log"
+        }
+      ]
+    },
+    {
+      "package": "tane",
+      "branch": "codex/03-docs-site-rollout",
+      "commit": "01be5be9c03c67a625985bbabec5b0a2fc5a95a9",
+      "state": "done and green",
+      "checks": [
+        {
+          "command": "pnpm check",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-tane-check.log"
+        },
+        {
+          "command": "pnpm docs:check",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-tane-docs-check.log"
+        },
+        {
+          "command": "pnpm test:demo",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-tane-test-demo.log"
+        },
+        {
+          "command": "pnpm test:readme",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-tane-test-readme.log"
+        },
+        {
+          "command": "pnpm test:package",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-tane-test-package.log"
+        }
+      ]
+    },
+    {
+      "package": "narabe",
+      "branch": "codex/03-docs-site-rollout",
+      "commit": "8bbb40f444699e0ae6553298b31ec355f0019490",
+      "state": "done and green",
+      "checks": [
+        {
+          "command": "pnpm check",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-narabe-check.log"
+        },
+        {
+          "command": "pnpm docs:check",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-narabe-docs-check.log"
+        },
+        {
+          "command": "pnpm test:demo",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-narabe-test-demo.log"
+        },
+        {
+          "command": "pnpm test:readme",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-narabe-test-readme.log"
+        },
+        {
+          "command": "pnpm test:package",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-narabe-test-package.log"
+        }
+      ]
+    },
+    {
+      "package": "tenka",
+      "branch": "codex/03-docs-site-rollout",
+      "commit": "7caf9d8f8aa59e3143c5b98e73d0bfc20894de6b",
+      "state": "done and green",
+      "checks": [
+        {
+          "command": "pnpm check",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-tenka-check.log"
+        },
+        {
+          "command": "pnpm docs:check",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-tenka-docs-check.log"
+        },
+        {
+          "command": "pnpm test:demo",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-tenka-test-demo.log"
+        },
+        {
+          "command": "pnpm test:readme",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-tenka-test-readme.log"
+        },
+        {
+          "command": "pnpm test:package",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-tenka-test-package.log"
+        }
+      ]
+    },
+    {
+      "package": "kumimoji",
+      "branch": "codex/03-docs-site-rollout",
+      "commit": "e167f6425ddddbf210002551a7b2ac7c23392596",
+      "state": "done and green",
+      "checks": [
+        {
+          "command": "pnpm check",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-kumimoji-check.log"
+        },
+        {
+          "command": "pnpm docs:check",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-kumimoji-docs-check.log"
+        },
+        {
+          "command": "pnpm test:demo",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-kumimoji-test-demo.log"
+        },
+        {
+          "command": "pnpm test:readme",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-kumimoji-test-readme.log"
+        },
+        {
+          "command": "pnpm test:package",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-kumimoji-test-package.log"
+        }
+      ]
+    },
+    {
+      "package": "tsunagi",
+      "branch": "codex/03-docs-site-rollout",
+      "commit": "b489c0c3880b6e66c0893031d42806f1d4a87ded",
+      "state": "done and green",
+      "checks": [
+        {
+          "command": "pnpm check",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-tsunagi-check.log"
+        },
+        {
+          "command": "pnpm docs:check",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-tsunagi-docs-check.log"
+        },
+        {
+          "command": "pnpm test:demo",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-tsunagi-test-demo.log"
+        },
+        {
+          "command": "pnpm test:readme",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-tsunagi-test-readme.log"
+        },
+        {
+          "command": "pnpm test:package",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-tsunagi-test-package.log"
+        }
+      ]
+    },
+    {
+      "package": "jarajara",
+      "branch": "codex/03-docs-site-rollout",
+      "commit": "3661376b5f2041632277a3f3b1c5ae2ac289bb4c",
+      "state": "done and green",
+      "checks": [
+        {
+          "command": "pnpm check",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-jarajara-check.log"
+        },
+        {
+          "command": "pnpm docs:check",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-jarajara-docs-check.log"
+        },
+        {
+          "command": "pnpm test:demo",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-jarajara-test-demo.log"
+        },
+        {
+          "command": "pnpm test:readme",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-jarajara-test-readme.log"
+        },
+        {
+          "command": "pnpm test:package",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-jarajara-test-package.log"
+        }
+      ]
+    },
+    {
+      "package": "suido",
+      "branch": "codex/03-docs-site-rollout",
+      "commit": "f6e153c415c0bc9a8bbc083ccbbf6e97089e3343",
+      "state": "done and green",
+      "checks": [
+        {
+          "command": "pnpm check",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-suido-check.log"
+        },
+        {
+          "command": "pnpm docs:check",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-suido-docs-check.log"
+        },
+        {
+          "command": "pnpm test:demo",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-suido-test-demo.log"
+        },
+        {
+          "command": "pnpm test:readme",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-suido-test-readme.log"
+        },
+        {
+          "command": "pnpm test:package",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-suido-test-package.log"
+        }
+      ]
+    },
+    {
+      "package": "domino",
+      "branch": "codex/03-docs-site-rollout",
+      "commit": "5551384d0d7dc9619ed6d6638e73056977554c57",
+      "state": "done and green",
+      "checks": [
+        {
+          "command": "pnpm check",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-domino-check.log"
+        },
+        {
+          "command": "pnpm docs:check",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-domino-docs-check.log"
+        },
+        {
+          "command": "pnpm test:demo",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-domino-test-demo.log"
+        },
+        {
+          "command": "pnpm test:readme",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-domino-test-readme.log"
+        },
+        {
+          "command": "pnpm test:package",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-domino-test-package.log"
+        }
+      ]
+    },
+    {
+      "package": "kotoba",
+      "branch": "codex/03-docs-site-rollout",
+      "commit": "e67d97ecdc2bfe3ffc592bab8e6acc66c3668c36",
+      "state": "done and green",
+      "checks": [
+        {
+          "command": "pnpm check",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-kotoba-check.log"
+        },
+        {
+          "command": "pnpm docs:check",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-kotoba-docs-check.log"
+        },
+        {
+          "command": "pnpm test:demo",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-kotoba-test-demo.log"
+        },
+        {
+          "command": "pnpm test:readme",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-kotoba-test-readme.log"
+        },
+        {
+          "command": "pnpm test:package",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-kotoba-test-package.log"
+        }
+      ]
+    },
+    {
+      "package": "sugoroku",
+      "branch": "codex/03-docs-site-rollout",
+      "commit": "df6d59c84a5ba90de0ab6798403d126524c735e9",
+      "state": "done and green",
+      "checks": [
+        {
+          "command": "pnpm check",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-sugoroku-check.log"
+        },
+        {
+          "command": "pnpm docs:check",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-sugoroku-docs-check.log"
+        },
+        {
+          "command": "pnpm test:demo",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-sugoroku-test-demo.log"
+        },
+        {
+          "command": "pnpm test:readme",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-sugoroku-test-readme.log"
+        },
+        {
+          "command": "pnpm test:package",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-sugoroku-test-package.log"
+        }
+      ]
+    },
+    {
+      "package": "kazu",
+      "branch": "codex/03-docs-site-rollout",
+      "commit": "1577edc8d716cc7c9ee027d337027b751ee90b36",
+      "state": "done and green",
+      "checks": [
+        {
+          "command": "pnpm check",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-kazu-check.log"
+        },
+        {
+          "command": "pnpm docs:check",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-kazu-docs-check.log"
+        },
+        {
+          "command": "pnpm test:demo",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-kazu-test-demo.log"
+        },
+        {
+          "command": "pnpm test:readme",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-kazu-test-readme.log"
+        },
+        {
+          "command": "pnpm test:package",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-kazu-test-package.log"
+        }
+      ]
+    },
+    {
+      "package": "meikyuu",
+      "branch": "codex/03-docs-site-rollout",
+      "commit": "8bee40123c985a42c60a9a72e32cb9fffa7bf489",
+      "state": "done and green",
+      "checks": [
+        {
+          "command": "pnpm check",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-meikyuu-check.log"
+        },
+        {
+          "command": "pnpm docs:check",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-meikyuu-docs-check.log"
+        },
+        {
+          "command": "pnpm test:demo",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-meikyuu-test-demo.log"
+        },
+        {
+          "command": "pnpm test:readme",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-meikyuu-test-readme.log"
+        },
+        {
+          "command": "pnpm test:package",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-meikyuu-test-package.log"
+        }
+      ]
+    },
+    {
+      "package": "hikidashi",
+      "branch": "codex/03-docs-site-rollout",
+      "commit": "7a28caf6b0c64dde25f59366395d93aa48e418e5",
+      "state": "done and green",
+      "checks": [
+        {
+          "command": "pnpm check",
+          "status": 0,
+          "log": "/tmp/family-03-workspace-pilot-check-final.log"
+        },
+        {
+          "command": "pnpm docs:check",
+          "status": 0,
+          "log": "/tmp/family-03-workspace-pilot-docs.log"
+        },
+        {
+          "command": "pnpm test:demo",
+          "status": 0,
+          "log": "/tmp/family-03-workspace-pilot-demo.log"
+        },
+        {
+          "command": "pnpm test:readme",
+          "status": 0,
+          "log": "/tmp/family-03-workspace-pilot-readme.log"
+        },
+        {
+          "command": "pnpm test:package",
+          "status": 0,
+          "log": "/tmp/family-03-workspace-pilot-package.log"
+        }
+      ]
+    },
+    {
+      "package": "chizu",
+      "branch": "codex/03-docs-site-rollout",
+      "commit": "96c616b92cb9144321cb622f68f059c341d354e6",
+      "state": "done and green",
+      "checks": [
+        {
+          "command": "pnpm check",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-chizu-check.log"
+        },
+        {
+          "command": "pnpm docs:check",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-chizu-docs-check.log"
+        },
+        {
+          "command": "pnpm test:demo",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-chizu-test-demo.log"
+        },
+        {
+          "command": "pnpm test:readme",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-chizu-test-readme.log"
+        },
+        {
+          "command": "pnpm test:package",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-chizu-test-package.log"
+        }
+      ]
+    },
+    {
+      "package": "bushu",
+      "branch": "codex/03-docs-site-rollout",
+      "commit": "08fcc2d6b4969305adea7b3dff7a0a8c4e86b4fa",
+      "state": "done and green",
+      "checks": [
+        {
+          "command": "pnpm check",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-bushu-check.log"
+        },
+        {
+          "command": "pnpm docs:check",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-bushu-docs-check.log"
+        },
+        {
+          "command": "pnpm test:demo",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-bushu-test-demo.log"
+        },
+        {
+          "command": "pnpm test:readme",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-bushu-test-readme.log"
+        },
+        {
+          "command": "pnpm test:package",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-bushu-test-package.log"
+        }
+      ]
+    },
+    {
+      "package": "tobiishi",
+      "branch": "codex/03-docs-site-rollout",
+      "commit": "ec58122d66a69101cf9e65422abdcaa80c2f1732",
+      "state": "done and green",
+      "checks": [
+        {
+          "command": "pnpm check",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-tobiishi-check.log"
+        },
+        {
+          "command": "pnpm docs:check",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-tobiishi-docs-check.log"
+        },
+        {
+          "command": "pnpm test:demo",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-tobiishi-test-demo.log"
+        },
+        {
+          "command": "pnpm test:readme",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-tobiishi-test-readme.log"
+        },
+        {
+          "command": "pnpm test:package",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-tobiishi-test-package.log"
+        }
+      ]
+    },
+    {
+      "package": "jirai",
+      "branch": "codex/03-docs-site-rollout",
+      "commit": "c0013b80cd952366ec5df435dddbfef4066fbf53",
+      "state": "done and green",
+      "checks": [
+        {
+          "command": "pnpm check",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-jirai-check.log"
+        },
+        {
+          "command": "pnpm docs:check",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-jirai-docs-check.log"
+        },
+        {
+          "command": "pnpm test:demo",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-jirai-test-demo.log"
+        },
+        {
+          "command": "pnpm test:readme",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-jirai-test-readme.log"
+        },
+        {
+          "command": "pnpm test:package",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-jirai-test-package.log"
+        }
+      ]
+    },
+    {
+      "package": "gunjin",
+      "branch": "codex/03-docs-site-rollout",
+      "commit": "3bad00abf3e022f97b41a8e5c5062b8ab7ec229e",
+      "state": "done and green",
+      "checks": [
+        {
+          "command": "pnpm check",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-gunjin-check.log"
+        },
+        {
+          "command": "pnpm docs:check",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-gunjin-docs-check.log"
+        },
+        {
+          "command": "pnpm test:demo",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-gunjin-test-demo.log"
+        },
+        {
+          "command": "pnpm test:readme",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-gunjin-test-readme.log"
+        },
+        {
+          "command": "pnpm test:package",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-gunjin-test-package.log"
+        }
+      ]
+    },
+    {
+      "package": "karakuri",
+      "branch": "codex/03-docs-site-rollout",
+      "commit": "3744dbf4fdb83ea83556136c4575e872672858b0",
+      "state": "done and green",
+      "checks": [
+        {
+          "command": "pnpm check",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-karakuri-check.log"
+        },
+        {
+          "command": "pnpm docs:check",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-karakuri-docs-check.log"
+        },
+        {
+          "command": "pnpm test:demo",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-karakuri-test-demo.log"
+        },
+        {
+          "command": "pnpm test:readme",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-karakuri-test-readme.log"
+        },
+        {
+          "command": "pnpm test:package",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-karakuri-test-package.log"
+        }
+      ]
+    },
+    {
+      "package": "houseki",
+      "branch": "codex/03-docs-site-rollout",
+      "commit": "1f4439ab2d0cc091c6283965f2147e9279caa5b4",
+      "state": "done and green",
+      "checks": [
+        {
+          "command": "pnpm check",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-houseki-check.log"
+        },
+        {
+          "command": "pnpm docs:check",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-houseki-docs-check.log"
+        },
+        {
+          "command": "pnpm test:demo",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-houseki-test-demo.log"
+        },
+        {
+          "command": "pnpm test:readme",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-houseki-test-readme.log"
+        },
+        {
+          "command": "pnpm test:package",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-houseki-test-package.log"
+        }
+      ]
+    },
+    {
+      "package": "address-plus",
+      "branch": "codex/03-docs-site-rollout",
+      "commit": "89c5b0c7b151ab4c21e94a44d94f77f11841bb6f",
+      "state": "done and green",
+      "checks": [
+        {
+          "command": "pnpm check",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-address-plus-check.log"
+        },
+        {
+          "command": "pnpm docs:check",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-address-plus-docs-check.log"
+        },
+        {
+          "command": "pnpm test:demo",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-address-plus-test-demo.log"
+        },
+        {
+          "command": "pnpm test:package",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-address-plus-test-package.log"
+        }
+      ]
+    },
+    {
+      "package": "kuni",
+      "branch": "codex/03-docs-site-rollout",
+      "commit": "dc8c039fdd3d2683f3d312dc447868edd393bef6",
+      "state": "done and green",
+      "checks": [
+        {
+          "command": "pnpm check",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-kuni-check.log"
+        },
+        {
+          "command": "pnpm docs:check",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-kuni-docs-check.log"
+        },
+        {
+          "command": "pnpm test:demo",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-kuni-test-demo.log"
+        },
+        {
+          "command": "pnpm test:package",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-kuni-test-package.log"
+        }
+      ]
+    },
+    {
+      "package": "hata",
+      "branch": "codex/03-docs-site-rollout",
+      "commit": "31f657c03634606baa117099846379501ae39b76",
+      "state": "done and green",
+      "checks": [
+        {
+          "command": "pnpm check",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-hata-check.log"
+        },
+        {
+          "command": "pnpm docs:check",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-hata-docs-check.log"
+        },
+        {
+          "command": "pnpm test:demo",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-hata-test-demo.log"
+        },
+        {
+          "command": "pnpm test:package",
+          "status": 0,
+          "log": "/tmp/family-03-workspaces-hata-test-package.log"
+        }
+      ]
+    },
+    {
+      "package": "rest-in-pieces",
+      "branch": "codex/03-docs-site-rollout",
+      "commit": "d02baaddbd03c2d8ee9500374b3cdefc49ef4a08",
+      "state": "done and green",
+      "checks": [
+        {
+          "command": "pnpm check",
+          "status": 0,
+          "log": "/tmp/family-03-rest-check-complete.log"
+        },
+        {
+          "command": "pnpm test:demo",
+          "status": 0,
+          "log": "/tmp/family-03-rest-test-demo-complete.log"
+        },
+        {
+          "command": "pnpm docs:check",
+          "status": 0,
+          "log": "/tmp/family-03-rest-docs-check-second.log"
+        },
+        {
+          "command": "pnpm docs:site",
+          "status": 0,
+          "log": "/tmp/family-03-rest-docs-site-final.log"
+        },
+        {
+          "command": "pnpm test:readme",
+          "status": 0,
+          "log": "/tmp/family-03-rest-readme-final.log"
+        }
+      ]
+    }
+  ]
+}

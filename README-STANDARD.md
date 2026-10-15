@@ -18,6 +18,14 @@ stood, and applied first to two pilots, [Tsunagi](https://github.com/johnmorrisd
 (already rich) and [Gunjin](https://github.com/johnmorrisdotca/gunjin) (sparse).
 The other twenty-two follow once the pilots have been read.
 
+**Status (2026-10-09).** The README now has a companion: [the documentation
+site](#the-documentation-site), piloted in
+[Hikidashi](https://github.com/johnmorrisdotca/hikidashi), with the steps for
+every other package in its
+[docs/ROLLOUT.md](https://github.com/johnmorrisdotca/hikidashi/blob/main/docs/ROLLOUT.md).
+Every title now carries [the English job beside the
+name](#the-english-job-beside-the-name).
+
 ## What the standard keeps, and what it adds
 
 It keeps the house order that 17 to 23 of the 24 READMEs already follow (In 30
@@ -56,18 +64,18 @@ Above the first `##`: the **title**, the **summary**, the **badges**, the
 
 | # | Heading | What it holds |
 | --- | --- | --- |
-| – | the title (`<h1>`) | The name, with its Japanese name small beside it. One `h1` per README, the first thing in it. |
+| – | the title (`<h1>`) | The name, with its Japanese name small beside it, then the English job: `<Name> <sub><kanji></sub> — <job>`. One `h1` per README, the first thing in it. See [The English job beside the name](#the-english-job-beside-the-name). |
 | – | the summary | One bold sentence of what it is, then a short paragraph of what it holds. No more than a screen. |
-| – | the badges | CI, npm version, licence, dependencies (0), TypeScript, in that order, colour `2f5d4a` (the data-licence badge follows where the package ships data). |
-| – | the links | `Play the demo →`, `API reference`, and any other first stop (the rules, the docs). |
+| – | the badges | CI, npm version, licence, dependencies (0), TypeScript, size, npm provenance, in that order, colour `2f5d4a` (the data-licence badge follows where the package ships data). See [The badges](#the-badges). |
+| – | the links | `Play the demo →`, `Documentation`, `Getting started`, `API reference`, and any other first stop (the rules). |
 | – | **the hero picture** | The demo as it looks on a desk and on a phone, light and dark. See [Pictures](#pictures). Directly under the links, before any `##`. |
 | 1 | `In 30 seconds` (or `<Verb> in 30 seconds`: "Play in 30 seconds", "Roll in 30 seconds") | The install line, then the smallest code that does something: a few lines that run as written. The same thing as one tag in a page, if the package has one. |
 | 2 | `Who it is for` | Three or four kinds of reader, each a bold lead and one sentence. |
 | 3 | `Features` | A bullet for each thing the package does, in plain words, each linking to its section. Then `### What's in it`: **a picture for every game, mode, board or feature**, in a table, each with a caption. |
-| 4 | `Use it in your project` | `### Install` first (npm, pnpm and yarn; the CDN line for a page with no bundler). Then one `###` for each way to use it: on a server with the API alone, as one tag with no bundler, in a bundler and each framework the package supports, on the command line. |
+| 4 | `Use it in your project` | `### Install` first (npm, pnpm and yarn; the CDN line for a page with no bundler), then `### Install under another name` (the npm alias with the English job's name). Then one `###` for each way to use it: on a server with the API alone, as one tag with no bundler, in a bundler and each framework the package supports, on the command line. |
 | 5 | `Examples` | Many examples, each a `###` with a sentence of what it shows and a code block that runs. See [Examples](#examples). |
 | – | the package's own sections | What it is, how it is drawn, how it is played, its data. As long as they need to be. Each with a picture where there is something to see. |
-| 6 | `API` | A table of the entry points (`import` path, what it holds), a table of the calls to learn first, and the link to the full reference (`api.html`, made from the source). Not a copy of the reference. |
+| 6 | `API` | A table of the entry points (`import` path, what it holds), a table of the calls to learn first, and the link to the documentation site's reference (a page per export, made from the source; `api.html` stays as its one-page index). Not a copy of the reference. |
 | 7 | `Theming` | Every custom property and option that changes the look, with its default in light and dark. |
 | 8 | `Limits` | What it does not do, and the numbers it stops at, stated plainly. |
 | 9 | `Accessibility` | What a screen reader hears, what the keyboard does, what reduced motion changes, colour and contrast, touch target sizes, and what is known to fall short. |
@@ -95,8 +103,10 @@ the family list. The budget is 64,000, which leaves room for an edit, and the
 lint fails a README over it.
 
 A README that would be longer keeps the sections the standard requires and
-moves **reference material** to files under `docs/`, linking each by a relative
-link from the section it came out of, with a summary left behind:
+moves **reference material** to the [documentation site](#the-documentation-site)'s
+guides (an Explanation guide in `docs/guides/`, which the site publishes), or,
+before a package has the site, to files under `docs/`, linking each from the
+section it came out of, with a summary left behind:
 
 - what moves: a source tree with a line on each file, the steps for making the
   package's data, the long tail of a table of calls (the README keeps the ones to
@@ -111,6 +121,158 @@ link from the section it came out of, with a summary left behind:
 `docs/` is on GitHub and is not in the tarball, so a moved page is read on
 GitHub, through the link. The files are plain Markdown, each starting with a
 `#` title and a line that links back to the README.
+
+## The English job beside the name
+
+Every package has a Japanese name, and nobody searches for one. So every title a
+search engine, npm or GitHub reads carries the plain English words for what the
+package does, its **job**, beside the name, in one form:
+
+**`<Name> <kanji> — <job>`**: "Chizu 地図 — SVG maps for JavaScript", "Kuni 国 —
+Countries, states and provinces", "Hikidashi 引き出し — Japanese text tools for
+JavaScript".
+
+- **Where it is written once**: `docs/site.json`'s `"job"`, the documentation
+  site's file. Everything else is held to it.
+- **Where it appears**: the npm `description` (which starts with the title and a
+  colon, and stays at 250 characters or fewer), the GitHub description (the same
+  text), the README's `<h1>` and its bold summary, the documentation site's
+  `<title>` and `og:title`, `llms.txt`'s first line, and the social preview.
+- **Keywords and topics**: npm `keywords` and the GitHub topics include the
+  plain English words for the job: `maps`, `svg-map`, `world-map` for Chizu;
+  `countries`, `iso-3166`, `subdivisions` for Kuni; `flags`, `country-flags`
+  for Hata; the game's English name for each game. Another product's name
+  (a trademark) appears only as a `-like` keyword or topic, never in a title.
+- **Installing under another name**: the README's `### Install under another
+  name` shows the npm alias with an English name, and an import from it:
+
+  ```sh
+  npm install maps@npm:@johnmorrisdotca/chizu
+  ```
+
+  ```ts no-check
+  import { worldMap } from "maps";
+  ```
+
+  The alias is a name in the reader's `package.json` only: the same package,
+  version and code, so there is no second package to publish or keep up.
+- **Checked**: the README lint fails when the `<h1>` or the npm description
+  does not contain the job `docs/site.json` names; the documentation site's
+  check fails when `docs/site.json` has no job.
+
+Each package's proposed job and keywords are in one table in Hikidashi's
+[docs/ROLLOUT.md](https://github.com/johnmorrisdotca/hikidashi/blob/main/docs/ROLLOUT.md),
+for the owner to approve in one look.
+
+## The badges
+
+In this order, each a static badge or GitHub's own, so that nothing is measured
+over the network when the tests run:
+
+1. CI (GitHub's workflow badge), 2. npm version, 3. licence, 4. dependencies
+(`0`), 5. TypeScript, then
+6. **size**: the whole package (the main entry), bundled, minified and gzipped
+   with esbuild, as `pnpm size --write` records it in `docs/bundle-size.json`
+   and prints the badge: `https://img.shields.io/badge/min%2Bgzip-6.4%20kB-2f5d4a`,
+   linking to the documentation's entry points. `src/docs-site.test.js`
+   measures every entry point again in `pnpm check` and fails when one moves by
+   more than 1 % (or 32 bytes) from the record, or when the badge is not the
+   recorded size.
+7. **npm provenance**: `https://img.shields.io/badge/npm-provenance-2f5d4a`,
+   linking to the npm page's `#provenance`, where npm shows the workflow that
+   built the version. True because the Release workflow publishes with
+   `npm publish --provenance`, which the test also checks.
+
+No paid badge service and no service that reads the registry for a size
+(bundlephobia, packagephobia) is used: the size is measured here, the badge is
+static.
+
+## The documentation site
+
+The README is the front door; the documentation site is the rest of the house.
+Every package publishes one beside its demo, at
+`https://johnmorrisdotca.github.io/<name>/docs/`, built by the Pages workflow
+(`pnpm docs:site`, after `pnpm site`). It is organised by what a reader came
+for (the Diátaxis split): a tutorial to learn, how-to recipes to do a job,
+explanation to understand, and the reference to look a call up, with
+troubleshooting and upgrading of their own.
+
+### What it holds
+
+- **A home page**: the title, the install line, Getting started, the entry
+  points with their sizes, and every guide.
+- **A sidebar** grouped by entry point (each with its exports), then the guides:
+  **Getting started**, **How-to**, **Explanation**, **Troubleshooting & FAQ**,
+  **Upgrading**, **Changelog** (rendered from `CHANGELOG.md`).
+- **One page per public export**, made from the TypeScript source and its doc
+  comments: the import line, the definition, the parameters, what it returns
+  and what `null` means, its members, every `@example` with what it printed when
+  the site was built, and "View source" and "Edit on GitHub" links. An entry
+  point has a page listing its exports and its size.
+- **Search**, by [Pagefind](https://pagefind.app/): the index is built with the
+  site and searched in the reader's browser. Nothing is hosted and nothing
+  bills; it works on GitHub Pages as plain files.
+- **English and Japanese**, each page at the same address under `docs/ja/`,
+  with the family's header, footer and cloth, light and dark. The guides are
+  translated; the reference keeps its English descriptions under Japanese
+  headings, and says so.
+- **`api.html`** stays, as an index of every export under its old anchors, each
+  linking to the export's page, so no old link breaks.
+- **`llms.txt` and `llms-full.txt`** at the site's root ([llmstxt.org](https://llmstxt.org/)),
+  and a Markdown twin of every English page.
+- **Accessible**: a skip link, landmarks, one `h1` and headings in order on
+  every page, visible focus, 44-pixel targets, and no sideways scroll at 390
+  pixels. The shared browser test walks every page to hold it.
+
+### What a package writes: words, never HTML
+
+- **Doc comments on every public export (TSDoc)**: a summary; `@param` for each
+  parameter (a destructured one takes its name from its `@param`); `@returns`
+  for every function that returns a value, saying **what `null` (or
+  `undefined`) means** whenever the return type includes it; and at least one
+  `@example`, a fenced block that imports the package by its name and prints
+  with `console.log`. The examples follow the README's fence rules (`ts no-run`,
+  `ts no-check`) and are type-checked and run when the site is built. These are
+  also what an editor shows on hover.
+- **Guides**, as Markdown: `docs/guides/<slug>.md` in English and
+  `docs/guides/ja/<slug>.md` in Japanese, the same file names. Each opens with
+  front matter: `title`, `section` (`tutorial`, `how-to`, `explanation`,
+  `troubleshooting` or `upgrading`), `order`, `description`. Headings start at
+  `##`; every fence names its language; links are `other-guide.md#a-heading`,
+  `api:<export>`, `entry:<slug>`, or a relative path to a file of the
+  repository. A package has at least one guide of each section. Upgrading has a
+  part for each major version and, where readers come from another library, a
+  "Coming from …" part.
+- **`docs/site.json`**: the job, and the header's lines and the entry points'
+  titles in both languages.
+
+### The checks
+
+`pnpm docs:check` (and the build) fail on: an export with no summary, a
+parameter with no `@param`, a `@param` for a parameter that is not there, a
+function with no `@returns` or one whose `@returns` does not say what null
+means, an export with no `@example`, an example that does not import the
+package by its name or does not run, a guide with no front matter or a missing
+section, a skipped heading level, a fence with no language, and any link (in a
+guide or a doc comment) that leads nowhere, anchors included.
+`src/docs-site.test.js` runs the static half in `pnpm check`, and
+`e2e/docs-site.demo.mjs` the browser half in `pnpm test:demo`.
+
+### The shared files
+
+Like the family template, these are one text in every package, copied
+unchanged; masters are in [`docs-site/`](docs-site/):
+
+| File | What it does |
+| --- | --- |
+| `scripts/docs-site.mjs` | The generator and its checks: `build`, `check`, `size [--write]`. Its `DOCS_SITE_VERSION` is the day it last changed. |
+| `src/docs-site.test.js` | Records the hashes of the generator and the browser test; checks the wiring, the docs, the job, the badges and the alias note. |
+| `e2e/docs-site.demo.mjs` | Walks every page in a browser: width, headings, landmarks, skip link, search in both languages, language links, every internal link, `api.html`, `llms.txt`. |
+| `scripts/social-preview.mjs` | Makes the 1280×640 social preview of every package in the family's look: the felt, the title with the job, the line on the package, a picture of its demo. GitHub has no API for it, so the owner uploads each one. |
+
+`pagefind`, `marked` and `esbuild` are development dependencies of every
+package: free, MIT licensed, run where the site is built, and never in what is
+installed from npm.
 
 ## Rules for the text
 
@@ -301,6 +463,10 @@ Each package carries the same four files, copied from
 | `scripts/check-readme-examples.mjs` | `pnpm test:readme` (`pnpm build` first). Writes every `ts` and `js` block to its own file, imports the package by its own name, type-checks the TypeScript with `tsc` (strict, with the DOM library) and runs each block with Node, which reads TypeScript by stripping its types: a TypeScript example that imports a type writes `import type`. Run in CI as a job of its own, on Node 24, so that it does not slow `pnpm check` and does not run on every operating system. |
 | `scripts/readme-pictures-lib.mjs` | The shared part of `pnpm screenshots:readme`. |
 
+The lint also holds [the English job](#the-english-job-beside-the-name): when
+`docs/site.json` names a job, the `<h1>` and the npm description must carry it.
+A package without that file is not yet held to it.
+
 And in the package's own files:
 
 - `package.json` has `screenshots:readme` (`pnpm site && node scripts/readme-pictures.mjs`) and `test:readme`
@@ -347,3 +513,15 @@ decided.
   its `### What's in it` subsection. The alternative is renaming the section.
 - **Pictures are WebP**, made with the browser's own encoder, so no tool is
   needed beyond Playwright. PNG is allowed for the rare lossless picture.
+- **The English jobs and keywords** of every package are proposed in one table
+  in Hikidashi's `docs/ROLLOUT.md`; the sweep copies each approved job into the
+  package's `docs/site.json`, description, title and topics.
+- **The Copies workflow** here will read `scripts/docs-site.mjs` and its test
+  out of every package once the sweep has put them there; until then it checks
+  only the community files, so that it is not red for packages that have not
+  yet adopted the site.
+- **A family landing page** that lists every package by its English job first
+  ("Maps — Chizu 地図") fits the profile README, `johnmorrisdotca/johnmorrisdotca`,
+  which GitHub shows at github.com/johnmorrisdotca and which already groups the
+  packages; a draft is with the owner. A `johnmorrisdotca.github.io` site would
+  need a new repository and a Pages build for the same list.

@@ -5,7 +5,7 @@
 //   import { lintReadme, readInputs } from "./readme-lint.mjs";
 //   const faults = lintReadme(readInputs(root));
 import { existsSync, readdirSync, readFileSync, statSync } from "node:fs";
-import { join } from "node:path";
+import { join, resolve } from "node:path";
 
 /** The `##` sections every README has, in order: [what it is called in messages, a pattern for the heading]. */
 export const REQUIRED_SECTIONS = [
@@ -56,9 +56,15 @@ const NAME = /^([a-z0-9]+(?:-[a-z0-9]+)*)-(desk|phone)-(light|dark)\.(webp|png)$
 /** Read what the lint needs from a package's folder. */
 export function readInputs(root) {
   const pkg = JSON.parse(readFileSync(join(root, "package.json"), "utf8"));
-  const images = join(root, "docs", "images");
+  const site = join(root, "docs", "site.json");
+  const config = existsSync(site) ? JSON.parse(readFileSync(site, "utf8")) : {};
+  const repositoryRoot = resolve(root, config.repositoryRoot ?? ".");
+  const images = join(repositoryRoot, "docs", "images");
   const pictures = existsSync(images) ? readdirSync(images).filter((file) => !file.startsWith(".")).map((file) => ({ file, bytes: statSync(join(images, file)).size })) : [];
-  return { readme: readFileSync(join(root, "README.md"), "utf8").replace(/\r\n/g, "\n"), pkg, pictures };
+  // The plain English words for what the package does ("SVG maps for JavaScript"), from docs/site.json, the documentation
+  // site's file. A package without it is not yet held to the job rule.
+  const job = config.job ?? null;
+  return { readme: readFileSync(join(repositoryRoot, "README.md"), "utf8").replace(/\r\n/g, "\n"), pkg, pictures, job };
 }
 
 /** The README split into its fenced blocks and the prose between them: [{ type: "code", info, body, line } | { type: "prose", text, line }]. */
@@ -128,11 +134,13 @@ const imageUrls = (readme) => {
 const isBadge = (src) => /^https:\/\/(img\.shields\.io|github\.com\/[^/]+\/[^/]+\/actions\/workflows\/[^/]+\/badge\.svg)/.test(src ?? "");
 
 /** Every fault in the README, as sentences that say where and what. */
-export function lintReadme({ readme, pkg, pictures, minSubjects = MIN_SUBJECTS, apiUrl }) {
+export function lintReadme({ readme, pkg, pictures, minSubjects = MIN_SUBJECTS, apiUrl, job = null }) {
   const faults = [];
   const fault = (message) => faults.push(message);
   const repo = pkg.name.split("/")[1];
-  const prefix = `https://raw.githubusercontent.com/johnmorrisdotca/${repo}/main/docs/images/`;
+  const repositoryUrl = typeof pkg.repository === "string" ? pkg.repository : pkg.repository?.url;
+  const repositoryPath = /github\.com[/:]([^/]+\/[^/#]+?)(?:\.git)?$/.exec(String(repositoryUrl ?? ""))?.[1] ?? `johnmorrisdotca/${repo}`;
+  const prefix = `https://raw.githubusercontent.com/${repositoryPath}/main/docs/images/`;
   const all = headings(readme);
   const lines = readme.split("\n");
 
@@ -143,6 +151,13 @@ export function lintReadme({ readme, pkg, pictures, minSubjects = MIN_SUBJECTS, 
   if (!/^(# |<h1[ >])/.test(firstLine)) fault("The README does not start with its title (a `#` heading or an `<h1>`).");
   const h1s = parts(readme).filter((part) => part.type === "prose").reduce((sum, part) => sum + part.text.split("\n").filter((line) => /^# /.test(line) || /<h1[ >]/.test(line)).length, 0);
   if (h1s !== 1) fault(`The README has ${h1s} top-level titles; it has one.`);
+
+  // The English job beside the Japanese name, wherever a search engine reads: "<Name> <kanji> — <job>".
+  if (typeof job === "string" && job.trim() !== "") {
+    const title = firstLine.replace(/<[^>]+>/g, "").replace(/^#\s*/, "").trim();
+    if (!title.includes(job)) fault(`The title is "${title}"; it carries the job from docs/site.json beside the name: "<Name> <kanji> — ${job}".`);
+    if (!String(pkg.description ?? "").includes(job)) fault(`package.json's description does not carry the job from docs/site.json, "${job}"; npm and GitHub show the description, so it says what the package does in plain English.`);
+  }
 
   // The required sections, in order, none empty.
   const twos = all.filter((heading) => heading.level === 2);
@@ -291,7 +306,7 @@ export function lintReadme({ readme, pkg, pictures, minSubjects = MIN_SUBJECTS, 
   for (const view of ["desk", "phone"]) if (subjects.has("hero") && !named.some((picture) => picture.subject === "hero" && picture.view === view)) fault(`The hero has no ${view} picture.`);
 
   // The API section and the full reference.
-  const api = apiUrl ?? `https://johnmorrisdotca.github.io/${repo}/api.html`;
+  const api = apiUrl ?? `${(pkg.homepage ?? `https://johnmorrisdotca.github.io/${repo}/`).replace(/\/?$/, "/")}api.html`;
   const apiAt = all.findIndex((heading) => heading.level === 2 && heading.title === "API");
   if (apiAt >= 0 && !sectionText(readme, all, apiAt).includes(api)) fault(`"## API" does not link the full reference (${api}).`);
 

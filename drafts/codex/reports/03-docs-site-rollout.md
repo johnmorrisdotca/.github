@@ -1,6 +1,6 @@
 # 03 — Documentation-site rollout
 
-Status: done — all 28 packages green and committed. Packages are completed one at a time on `codex/03-docs-site-rollout`, stacked on 12 where that package adopted 12 and otherwise on 02. Completed branches through Hikidashi, plus 02/12, were pushed for release review on 2026-10-12; see reports/push-release-handoff-2026-10-12.md. Further rollout commits remain local. Nothing tagged, published, deployed, merged or changed in GitHub settings. All 28 packages have adopted the site and the current shared tooling; final SHA-256 and clean-worktree checks passed.
+Status: done — all 28 packages green and committed. Packages are completed one at a time on `codex/03-docs-site-rollout`, stacked on 12 where that package adopted 12 and otherwise on 02. Completed branches through Hikidashi, plus 02/12, were pushed for release review on 2026-10-12; see reports/push-release-handoff-2026-10-12.md. All final documentation rollout branches were pushed and verified on 2026-10-14; see reports/push-docs-handoff-2026-10-14.md. Nothing tagged, published, deployed, merged or changed in GitHub settings. All 28 packages have adopted the site and the current shared tooling; final SHA-256 and clean-worktree checks passed.
 
 ## Package state
 

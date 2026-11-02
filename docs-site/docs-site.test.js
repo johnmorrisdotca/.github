@@ -80,9 +80,12 @@ describe("the README's badges", () => {
     const measured = JSON.parse(ran.stdout);
     expect(Object.keys(measured.entries).sort()).toEqual(Object.keys(recorded.entries).sort());
     for (const [key, size] of Object.entries(measured.entries)) {
-      // gzip's bytes move a little with the zlib a Node version carries; anything more is a change to record.
+      // The minified bytes are esbuild's and are the same on every machine, so any change to them is a change to record.
+      expect(size.minified, `${key} is ${size.minified} bytes minified; docs/bundle-size.json says ${recorded.entries[key].minified}. Run \`pnpm size --write\` and update the badge.`).toBe(recorded.entries[key].minified);
+      // gzip's bytes are not: the file is recorded where CI measures it (Linux, x64) and a Mac's zlib gives other bytes for the same input, up to 3.3 percent of a small entry
+      // (4 percent allowed), under 0.5 percent of a large one.
       const was = recorded.entries[key].gzip;
-      expect(Math.abs(size.gzip - was), `${key} is ${size.gzip} bytes gzipped; docs/bundle-size.json says ${was}. Run \`pnpm size --write\` and update the badge.`).toBeLessThanOrEqual(Math.max(32, was * 0.01));
+      expect(Math.abs(size.gzip - was), `${key} is ${size.gzip} bytes gzipped; docs/bundle-size.json says ${was}. Run \`pnpm size --write\` and update the badge.`).toBeLessThanOrEqual(Math.max(32, was * 0.04));
     }
     const whole = recorded.entries["."]?.gzip ?? Object.values(recorded.entries)[0].gzip;
     expect(readme).toContain(sizeBadge(site, whole));

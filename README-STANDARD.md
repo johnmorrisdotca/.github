@@ -395,7 +395,9 @@ are for people deciding whether to install it.
   "reduce"`; waiting on the page's own markers and never on a clock. Two runs
   on one commit give the same pictures.
 - **The script uses `scripts/readme-pictures-lib.mjs`**, which is the same file
-  in every package. It serves the site, opens each shot at each size and in each
+  in every package. It serves the site (an address that names a folder gets that
+  folder's `index.html`, as a web server gives it, so a demo with `embed/` or `api/` pages
+  works), opens each shot at each size and in each
   colour scheme, crops to the element where a shot names one, converts to WebP,
   checks the size budget, and removes any picture the script no longer makes.
   The package's own file lists the shots and how each is set up.

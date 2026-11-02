@@ -367,6 +367,56 @@ has (a package leaves out only what it genuinely does not offer):
 reader would try things; `Examples` is the cookbook. A recipe is not repeated
 in both: the first points to the second.
 
+## The demo
+
+The demo is the package's second front door, and the page most readers use
+before they read anything. Its own pages are the package's (`demo/<name>.css`,
+`scripts/site.mjs`); what follows is what every demo does the same way.
+
+**Wherever a demo offers an option, the code beside it is made from the options.**
+A demo whose example code is typed by hand, or built from a different state than
+the preview, teaches code that is not what the page shows. So the code on a demo
+page is written by one function from the same settings that draw the preview,
+changing an option rewrites the code and the preview together, and changing it
+back takes it out of the code again. The code that is shown is the code that
+runs: pasting it into a page makes the same thing the preview shows.
+
+**Every package whose component has options has a Builder** (`builder.html`),
+made by `familyEmbedBuilder` in `scripts/family-template.mjs`, which owns the
+controls, the attribute names, the tabs, the address and the copy button. The
+package supplies only what is its own:
+
+- **The option list**, exported from the package itself (`CUBE_OPTIONS`,
+  `CUBE_OPTION_GROUPS` in Kyuubu), with each option's name, its values, its
+  default and its words in both languages. The Builder is *generated from that
+  list*, so an option added to the package appears on the page without anyone
+  editing it, and an option left off the page has to be named as left off
+  (`CUBE_OPTIONS_LEFT_OUT`) with its reason. A test holds the page to the list.
+- **A small `demo/builder-code.js`** that says how each way of using the package
+  is written: the element, the module call, the iframe, React, Vue, Svelte,
+  Angular, plain HTML, the address of the embed. Every format a package offers
+  writes the same choices.
+- **The choices in the address**, so a copied link opens the same page.
+
+A package with no component but with options (a data package, a rules engine)
+still shows its calls with its options in them, on one page, written the same
+way.
+
+**The tests a demo carries**, beside the README's four (see
+[The tests a package carries](#the-tests-a-package-carries)):
+
+| File | What it asks |
+| --- | --- |
+| `e2e/builder-code.demo.mjs` | Press an option on the Builder and the code changes, and carries the value; the address carries it too; pressing the old value back returns the code to what it said; every format writes code for the same choices. The master is [`demo-standard/builder-code.demo.mjs`](demo-standard/builder-code.demo.mjs), copied unchanged. It finds the options by `#bld-groups [data-option]`, so it needs no list of this package's. |
+| `e2e/language-steady.demo.mjs` | The demo keeps its table or board, and its controls, where they were when the language changes, in both directions and at a phone's width and a desk's. |
+| `e2e/embed-standard.demo.mjs` | The embed takes the family's attributes. |
+
+**One cloth.** A package that draws a table or a board offers the family's five
+cloths, `wood`, `green`, `blue`, `red` and `black` (the same set as the felt
+patches on itsutsu.com), as one attribute (`cloth`) and one CSS custom property,
+picked in its demo's header and written into the Builder's code. A test in each
+package holds its list of cloths to the family's.
+
 ## Pictures
 
 A picture says more than a paragraph about what a package draws, and the READMEs

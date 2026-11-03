@@ -462,6 +462,8 @@ are for people deciding whether to install it.
 - **Names**: `<subject>-<desk|phone>-<light|dark>.webp` in kebab case, for
   example `hero-desk-light.webp`, `portals-desk-dark.webp`. `<subject>` is what
   it shows. Every picture has both a light and a dark file.
+  The family's three thumbnail files are the one exception: see
+  [The thumbnail](#the-thumbnail).
 - **Format**: WebP (lossy, quality 82) for screenshots; PNG only for a picture
   that must be lossless (flat diagrams with text), which is rare. No JPEG, no
   GIF.
@@ -502,6 +504,64 @@ are for people deciding whether to install it.
 - **The gallery is a table** of `<td align="center">`, two or three across,
   each cell a picture and its caption. It is the only table that is used for
   layout.
+
+## The thumbnail
+
+Every package has an official picture of itself, made from its own drawing,
+for everything outside its README that shows it: a link preview in Slack,
+LinkedIn, iMessage or on X, GitHub's social preview, the owner's package
+scorecard, a list of the family. The master is
+[`family/family-thumbnail.mjs`](family/family-thumbnail.mjs).
+
+- **Three files in `docs/images/`, from one drawing**, all PNG:
+
+  | File | Size | What it is for |
+  | --- | --- | --- |
+  | `thumbnail.png` | 1200×630, light | The social card: `og:image`, `twitter:image`, and GitHub's social preview (Settings → General → Social preview takes 1200×630). |
+  | `thumbnail-dark.png` | 1200×630, dark | The README's top picture in a dark theme. |
+  | `icon.png` | 512×512, light | A tight crop of the drawing that still reads at 40 px, with no text: lists, the scorecard, the demo's `apple-touch-icon`. |
+
+- **What it shows**: the package's own drawing at its best, laid on the
+  family's paper (`#f7f4ec`) or its black cloth (`#1b1d20`), with nothing of the
+  page around it. Small text at most: the package's name at the bottom left of
+  the cards, none on the icon. No logo or mark of anyone else; the art is the
+  package's own or CC0.
+- **Made, never drawn by hand**: the package's screenshot script makes them
+  with the rest of its pictures. A `thumbnail` entry beside `shots` in
+  `scripts/readme-pictures.mjs` (`takePictures({ shots, thumbnail })`) names the
+  drawing (`target`, a selector), how to set it up (`url`, `ready`, `prepare`)
+  and the icon's tighter drawing (`icon.target`); a package with its own
+  screenshot script calls `captureDrawing` and `composeThumbnails` itself. The
+  drawing is taken with a transparent ground (its ancestors lose their
+  backgrounds, everything beside it is hidden), trimmed, fitted and centred.
+  A WebGL drawing is taken in Chromium drawing in software only
+  (`--headless=new --use-gl=angle --use-angle=swiftshader
+  --enable-unsafe-swiftshader --disable-gpu-compositing`).
+- **Published on Pages** at stable addresses beside the demo:
+  `https://<owner>.github.io/<repo>/thumbnail.png`, `thumbnail-dark.png` and
+  `icon.png`. The site builder calls `publishThumbnails(root, siteDir)`.
+- **In the demo's `<head>`**: `thumbnailHead(pkg)` writes `og:image` (with its
+  width, height and alt), `twitter:card` (`summary_large_image`),
+  `twitter:image` and the `apple-touch-icon`, at those absolute addresses.
+- **At the top of the README, above the title**: `thumbnailReadmeBlock(pkg, {
+  alt })`, the light and dark cards in a `<picture>` linking to the demo, at
+  their raw addresses like every other picture. npm shows the light one. The
+  lint skips this block when it looks for the title, and holds the three files
+  to the rules here rather than to the screenshots' names, budgets and captions.
+- **The test**: `family-thumbnail.test.js` (Vitest, beside `readme.test.js`)
+  or `test/family-thumbnail.test.ts` (node:test) runs `thumbnailFaults(".")`,
+  which fails when a file is missing, is not a PNG, has the wrong size or is
+  over its budget (1 MB a card, 400 KB the icon), when the README does not open
+  with the card, or when the site builder does not put the tags in the demo's
+  head or publish the files. It records the hash of
+  `scripts/family-thumbnail.mjs`, and `FAMILY_THUMBNAIL_VERSION` is the day it
+  last changed.
+
+| File | What it does |
+| --- | --- |
+| `scripts/family-thumbnail.mjs` | The convention as code: the files and sizes, the addresses, the head's tags, the README's block, the checks, the capture and the composition. Imports nothing beyond Node; given a Playwright page, it draws in the browser's own canvas. |
+| `scripts/family-thumbnail.d.mts` | Its types, for packages whose scripts are TypeScript. |
+| `src/family-thumbnail.test.js` or `test/family-thumbnail.test.ts` | The test above, in the package's test runner. |
 
 ## The tests a package carries
 

@@ -541,8 +541,16 @@ scorecard, a list of the family. The master is
   `https://<owner>.github.io/<repo>/thumbnail.png`, `thumbnail-dark.png` and
   `icon.png`. The site builder calls `publishThumbnails(root, siteDir)`.
 - **In the demo's `<head>`**: `thumbnailHead(pkg)` writes `og:image` (with its
-  width, height and alt), `twitter:card` (`summary_large_image`),
-  `twitter:image` and the `apple-touch-icon`, at those absolute addresses.
+  width, height and alt), `twitter:card` (`summary_large_image`) and
+  `twitter:image` at those absolute addresses, which link previews need and
+  browsers never fetch, and the `apple-touch-icon` relative to the page:
+  `<link rel="apple-touch-icon" href="icon.png" />`. The icon is the one tag a
+  browser fetches, so it stays on the page's own site and a strict
+  Content-Security-Policy (`img-src 'self'`) allows it. A page below the site's
+  root passes the way back to it, `thumbnailHead(pkg, { base: "../" })`; a page
+  that keeps its own icon passes `{ icon: false }`. No tag a browser fetches
+  (`link`, `img`, `script`, `source`) carries an absolute or cross-origin
+  address, and the template test holds the head to that.
 - **At the top of the README, above the title**: `thumbnailReadmeBlock(pkg, {
   alt })`, the light and dark cards in a `<picture>` linking to the demo, at
   their raw addresses like every other picture. npm shows the light one. The

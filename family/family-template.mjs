@@ -128,7 +128,7 @@ export const FAMILY_PITCH = {
   hikidashi: "a drawer of small Japanese text tools: era dates, kanji numerals, readings and sentence difficulty",
   chizu: "maps of the world and of countries' regions, in English and Japanese, with a quiz and callouts",
   bushu: "find a kanji by the parts it is made of",
-  jisho: "Japanese words looked up by reading or written form, and the grades, levels, readings and look-alike pairs of 2,999 kanji",
+  jisho: "Japanese words looked up by reading or written form, and the grades, JLPT levels, readings and look-alike pairs of 2,999 kanji",
   tobiishi: "peg solitaire with nine boards and seeded solvable challenges",
   jirai: "minesweeper on shaped grids with verified no-guess boards",
   gunjin: "five hidden-rank strategy games with pass-the-device play",
@@ -147,7 +147,7 @@ export const FAMILY_PITCH = {
 /** Japanese pitches for the new geography and developer members; awaiting native review. */
 export const FAMILY_PITCH_JA = {
   "address-plus": "アメリカ、カナダ、日本、オーストラリア、フランス、ドイツ、イギリスの住所を解析・整形",
-  jisho: "読みや表記から引ける日本語の単語と、2,999字の漢字の学年、レベル、読み、形の似た漢字の組",
+  jisho: "日本語の単語を読みや表記から引け、2,999字の漢字の学年、JLPTレベル、読み、形の似た漢字の組も収録",
   "hata": "国と行政区画の旗を、実際の縦横比のSVGで収録。ISOコードで引けます",
   "kuni": "世界の国と行政区画を、ISOコードと英語・日本語の名称つきで収録",
   "rest-in-pieces": "フロントエンド開発向けの、シード値で固定できるテストデータとREST API（遅延・エラーの再現つき）",

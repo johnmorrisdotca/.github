@@ -45,6 +45,7 @@ export const PROPOSED_JOBS = {
   hikidashi: "Japanese text tools for JavaScript",
   chizu: "SVG maps for JavaScript",
   bushu: "Find kanji by their radicals",
+  jisho: "Japanese word and kanji data for JavaScript",
   tobiishi: "Peg solitaire",
   jirai: "Minesweeper with no-guess boards",
   gunjin: "Hidden-rank strategy games",

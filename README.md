@@ -54,3 +54,9 @@ Japanese, search that runs in the browser, and `llms.txt`. The standard is in
 copies of its shared files are in [`docs-site/`](docs-site/), and the steps for
 a package are Hikidashi's
 [docs/ROLLOUT.md](https://github.com/johnmorrisdotca/hikidashi/blob/main/docs/ROLLOUT.md).
+
+## Family footer: change and sync
+
+The master template and README writer live in `family/`. Change them here first,
+then run `node family/sync.mjs --only hoshi-stars,kuni` or use `--all`.
+Claude lands the resulting branches. The weekly Copies job reports drift.

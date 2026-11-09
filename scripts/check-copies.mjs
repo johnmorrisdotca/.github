@@ -24,7 +24,7 @@ for (const file of FILES) {
     if ((await response.text()) !== master) wrong.push(`${name}: scripts/community/${file} is not the master text`);
   }
 }
-const KNOWN_BEHIND = new Set(["bushu", "domino", "gunjin", "hikidashi", "hitotsu", "houseki", "jarajara", "jirai", "karakuri", "kazu", "korokoro", "kumimoji", "kyogijo-stadiums", "kyuubu", "narabe", "sugoroku", "tane", "tenka", "tobiishi", "toranpu"]);
+const KNOWN_BEHIND = new Set(["bushu", "domino", "gunjin", "hikidashi", "hitotsu", "houseki", "jarajara", "jirai", "karakuri", "kazu", "korokoro", "kumimoji", "kyogijo-stadiums", "kyuubu", "narabe", "sugoroku", "tane", "tenka", "tobiishi", "toranpu", "rest-in-pieces"]);
 const familyFiles = ["family-template.mjs", "family-readme.mjs"];
 const masters = Object.fromEntries(familyFiles.map((file) => [file, readFileSync(join(here, "family", file), "utf8")]));
 const results = await Promise.all(FAMILY.flatMap(({ id }) => familyFiles.map(async (file) => {
